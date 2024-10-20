@@ -1,0 +1,44 @@
+@charset "utf-8";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@page {
+  size: 148mm 210mm;
+  margin: 18mm 18mm 18mm 13mm;
+  @bottom-center {
+    content: counter(page);
+    margin-top: 2.5mm;
+    width: 8mm;
+    font-size: 12q;
+  }
+}
+@page: right {
+  margin: 18mm 13mm 18mm 18mm;
+}
+@page: nth(1) {
+  margin: 0;
+}
+
+h1 {
+  break-after: page;
+}
+
+h2 {
+  margin-top: 6mm;
+  margin-bottom: 2mm;
+}
+h1 + h2 {
+  margin-top: 0;
+}
+
+p {
+  font-size: 13q;
+  line-height: 21q;
+  text-align: justify;
+  text-indent: 1em;
+  text-spacing: auto;
+}
