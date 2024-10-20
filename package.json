@@ -1,0 +1,63 @@
+{
+  "name": "create-book",
+  "description": "The fastest way to start writing book with Vivliostyle ecosystem.",
+  "version": "1.1.3",
+  "author": "Vivliostyle Foundation",
+  "license": "Apache-2.0",
+  "engines": {
+    "node": ">= 14"
+  },
+  "bin": "lib/cli.js",
+  "keywords": [
+    "book",
+    "vivliostyle"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vivliostyle/create-book"
+  },
+  "homepage": "https://github.com/vivliostyle/create-book",
+  "bugs": {
+    "url": "https://github.com/vivliostyle/create-book/issues"
+  },
+  "files": [
+    "lib",
+    "templates"
+  ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  },
+  "scripts": {
+    "build": "npm run tsup -- --minify",
+    "clean": "shx rm -rf lib",
+    "dev": "npm run tsup -- --watch",
+    "prepare": "npm run clean && npm run build",
+    "release": "release-it",
+    "release:dry": "release-it --dry-run",
+    "tsup": "tsup src/cli.ts -d lib",
+    "test": "jest",
+    "test:debug": "jest --silent=false --verbose false"
+  },
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "create-create-app": "^7.1.0",
+    "execa": "^5.1.1",
+    "upath": "^2.0.1"
+  },
+  "devDependencies": {
+    "@release-it/conventional-changelog": "^4.2.2",
+    "@types/jest": "^27.4.1",
+    "@types/node-fetch": "^2.6.1",
+    "husky": "^4.3.8",
+    "jest": "^27.5.1",
+    "prettier": "^2.6.0",
+    "pretty-quick": "^3.1.3",
+    "release-it": "^14.13.0",
+    "shx": "^0.3.4",
+    "ts-jest": "^27.1.3",
+    "tsup": "^5.12.1",
+    "typescript": "^4.6.2"
+  }
+}

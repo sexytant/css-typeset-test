@@ -1,0 +1,12 @@
+{
+  "exclude": ["tests", "lib"],
+  "compilerOptions": {
+    "target": "es2018",
+    "module": "commonjs",
+    "declaration": true,
+    "outDir": "./lib",
+    "rootDir": "./src",
+    "strict": true,
+    "esModuleInterop": true
+  }
+}
